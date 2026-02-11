@@ -41,7 +41,7 @@ export function BottomNav() {
 
   return (
     <nav className="fixed bottom-0 left-0 right-0 z-50 border-t border-border bg-card/95 backdrop-blur-xl" role="navigation" aria-label="Main navigation">
-      <div className="relative mx-auto flex max-w-lg items-end justify-around px-2 pb-5 pt-2">
+      <div className="relative mx-auto grid max-w-lg grid-cols-5 pb-5 pt-2">
         {tabs.slice(0, 2).map((tab) => {
           const Icon = tab.icon;
           const isActive = screen === tab.screen;
@@ -49,7 +49,7 @@ export function BottomNav() {
             <button
               key={tab.screen}
               onClick={() => navigate(tab.screen)}
-              className="flex min-h-[48px] min-w-[48px] flex-col items-center gap-1 px-3 py-1"
+              className="flex flex-col items-center justify-end gap-1 py-1"
               aria-label={tab.label}
               aria-current={isActive ? "page" : undefined}
             >
@@ -69,10 +69,10 @@ export function BottomNav() {
           );
         })}
 
-        <div className="relative -top-4 flex flex-col items-center">
+        <div className="flex flex-col items-center justify-end">
           <button
             onClick={fabAction}
-            className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary shadow-lg shadow-primary/30 transition-transform active:scale-95"
+            className="-mt-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary shadow-lg shadow-primary/30 transition-transform active:scale-95"
             aria-label={role === "teacher" ? "Generate Paper" : "Start Test"}
           >
             {role === "teacher" ? (
@@ -93,7 +93,7 @@ export function BottomNav() {
             <button
               key={tab.screen}
               onClick={() => navigate(tab.screen)}
-              className="flex min-h-[48px] min-w-[48px] flex-col items-center gap-1 px-3 py-1"
+              className="flex flex-col items-center justify-end gap-1 py-1"
               aria-label={tab.label}
               aria-current={isActive ? "page" : undefined}
             >
