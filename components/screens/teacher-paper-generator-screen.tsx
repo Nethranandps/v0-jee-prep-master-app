@@ -152,7 +152,7 @@ export function TeacherPaperGeneratorScreen() {
   }
 
   return (
-    <div className="flex flex-col gap-6 px-4 py-6 pb-28">
+    <div className="flex flex-col gap-6 px-4 py-6">
       <div className="flex items-center gap-3">
         <button
           onClick={() => navigate("teacher-home")}
@@ -278,7 +278,7 @@ export function TeacherPaperGeneratorScreen() {
       </div>
 
       {/* Generate Button */}
-      <div className="fixed bottom-0 left-0 right-0 border-t border-border bg-card/95 px-4 py-4 backdrop-blur-xl">
+      <div className="mt-2">
         <Button
           onClick={handleGenerate}
           disabled={!canGenerate}
