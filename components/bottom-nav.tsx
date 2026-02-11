@@ -6,7 +6,7 @@ import {
   FileText,
   BookOpen,
   TrendingUp,
-  User,
+  Users,
   Plus,
   Sparkles,
 } from "lucide-react";
@@ -16,15 +16,13 @@ const studentTabs: { icon: typeof Home; label: string; screen: AppScreen }[] = [
   { icon: FileText, label: "Tests", screen: "student-tests" },
   { icon: BookOpen, label: "Library", screen: "student-library" },
   { icon: TrendingUp, label: "Progress", screen: "student-progress" },
-  { icon: User, label: "Profile", screen: "student-profile" },
 ];
 
 const teacherTabs: { icon: typeof Home; label: string; screen: AppScreen }[] = [
   { icon: Home, label: "Home", screen: "teacher-home" },
   { icon: FileText, label: "Papers", screen: "teacher-tests" },
   { icon: BookOpen, label: "Library", screen: "teacher-library" },
-  { icon: User, label: "Classes", screen: "teacher-classes" },
-  { icon: User, label: "Profile", screen: "teacher-profile" },
+  { icon: Users, label: "Classes", screen: "teacher-classes" },
 ];
 
 export function BottomNav() {

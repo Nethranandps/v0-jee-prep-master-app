@@ -2,11 +2,11 @@
 
 import { useApp } from "@/lib/app-context";
 import { useTheme } from "next-themes";
-import { Bell, Search, Sun, Moon, Zap } from "lucide-react";
+import { Bell, Search, Sun, Moon, Zap, UserCircle } from "lucide-react";
 import { sampleNotifications } from "@/lib/sample-data";
 
 export function TopBar() {
-  const { navigate } = useApp();
+  const { navigate, role } = useApp();
   const { theme, setTheme } = useTheme();
   const unreadCount = sampleNotifications.filter((n) => !n.read).length;
 
@@ -48,6 +48,17 @@ export function TopBar() {
           ) : (
             <Moon className="h-5 w-5" />
           )}
+        </button>
+        <button
+          onClick={() =>
+            navigate(
+              role === "teacher" ? "teacher-profile" : "student-profile",
+            )
+          }
+          className="flex h-10 w-10 items-center justify-center rounded-xl text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+          aria-label="Profile"
+        >
+          <UserCircle className="h-5 w-5" />
         </button>
       </div>
     </header>
